@@ -10,8 +10,8 @@ for (let i = 0; i < gridItems; i++) {
 
 const gridItemStyle = `
     .grid-item {
-        width: calc(100% / ${gridSize});
-        height: calc(100% / ${gridSize});
+        width: calc(50% / ${gridSize});
+        height: calc(50% / ${gridSize});
         background-color: lightgray;
         border: 1px solid #ccc;
         box-sizing: border-box;
