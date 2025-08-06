@@ -4,6 +4,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    ;
 }
 
 button {
@@ -21,15 +22,15 @@ button {
     font-size: 72px;
 }
 
-.sketch-content {
+.main {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: flex-start;
 }
 
-.config-area-1,
-.config-area-2 {
+.area-1,
+.area-2 {
     flex: 1;
 }
 
@@ -37,7 +38,7 @@ button {
 
 .toggle-header {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     font-family: 'Josefin Sans', 'Poppins', sans-serif;
     font-weight: 400;
@@ -97,4 +98,145 @@ button {
 .toggle-header:has(+ .active) #spacebar-text {
     color: rgb(80, 220, 100);
     transition: all 0.3s;
+}
+
+/* main box left of the grid styling */
+
+.area-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.color-ctrl {
+    width: 240px;
+    padding: 50px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.pen-color-ctrl,
+.bg-color-ctrl {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.eraser-btn {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1.5px solid black;
+    border-radius: 20%;
+    color: black;
+    width: 80px;
+    height: 80px;
+    padding: 10px 0;
+    transition: all 0.3s;
+    margin: 20px 0;
+}
+
+.eraser-btn:hover {
+    background-color: black;
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+.eraser-btn:focus {
+    outline: none;
+}
+
+.eraserActive {
+    background-color: black;
+    color: white;
+    border: 5px double rgb(85, 227, 180);
+    transform: scale(1.1);
+}
+
+.grid-area {
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid blue; */
+}
+
+.grid {
+    display: flex;
+    border: 3px solid #e63946;
+    transition: 0.3s;
+    flex-wrap: wrap;
+    height: 500px;
+    width: 500px;
+}
+
+.active-grid {
+    border-color: rgb(85, 227, 180);
+    border-width: 3px;
+    transition: all .3s;
+}
+
+.area-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#grid-apply {
+    transition: all 0.3s;
+    margin-top: 20px;
+}
+
+#reset-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 50%;
+    border: 2px solid #e63946;
+    background-color: white;
+    color: #e63946;
+    width: 60px;
+    height: 60px;
+    transition: all 0.3s;
+}
+
+#reset-grid:hover {
+    transform: scale(1.1);
+    background-color: #e63946;
+    color: white;
+}
+
+.active-reset#reset-grid {
+    border: 1.5px solid rgb(85, 227, 180);
+    color: rgb(85, 227, 180);
+}
+
+.active-reset#reset-grid:hover {
+    background-color: rgb(85, 227, 180);
+    color: white;
+}
+
+#reset-grid:focus,
+.active-reset:focus {
+    outline: none;
+}
+
+.footer {
+    background-color: #eeeeee;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

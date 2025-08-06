@@ -22,12 +22,58 @@
     </div>
     <div class="toggles">
         <div class="toggle-header">
-            Press$nbspl<p id="spacebar-text">Spacebar</p>$nbsp; to toggle the pen
+            Press&nbsp;<p id="spacebar-text">Spacebar</p>&nbsp; to toggle the pen
         </div>
         <div class="toggle">
             <div class="circle"></div>
         </div>
         <span class="toggle-text">Off</span>
+    </div>
+    <div class="main">
+        <div class="area-1">
+            <div class="color-ctrl">
+                <div class="pen-color-ctrl">
+                    <label for="pen-color">Pen:</label>
+                    <input type="color" id="pen-color" value="#000000" name="pen-color">
+                </div>
+                <div class="bg-color-ctrl">
+                    <label for="bg-color">Background:</label>
+                    <input type="color" id="bg-color" value="#ffffff" name="bg-color">
+                </div>
+            </div>
+            <button id="eraser-btn" class="eraser-btn" onclick="eraserToggle()">Eraser</button>
+        </div>
+        <div class="grid-area">
+            <div class="grid">
+
+            </div>
+        </div>
+        <div class="area-2">
+            <div class="grid-size-ctr">
+                <div id="grid-range-title">
+                    Grid Size:
+                </div>
+                <input type="range" id="num-grid" min="4" max="100" step="1">
+                <div id="num-grid-feedback">
+
+                </div>
+                <button id="grid-apply">
+                    Apply
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="reset-ctr">
+        <button id="reset-grid">
+            Reset
+        </button>
+    </div>
+
+
+    <div class="footer">
+        <p>Created by <a href="https://github.com/Matt-d-schmidt/Etch-a-Sketch/tree/main" target="_blank">Matthew
+                Schmidt</a>
+        </p>
     </div>
 </body>
 

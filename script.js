@@ -1,4 +1,4 @@
-const container = document.querySelector('.container');
+const container = document.querySelector('.grid');
 const gridSize = 16; // Default grid size
 const gridItems = gridSize * gridSize;
 
