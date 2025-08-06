@@ -1,11 +1,100 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
-@import "tailwindcss/typography";
-@import "tailwindcss/forms";
-@import "tailwindcss/aspect-ratio";
-@import "tailwindcss/line-clamp";
-
 body {
-    @apply bg-gray-100 text-gray-900;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, Roboto, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, Roboto, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+}
+
+.header {
+    padding: 30px 30px 0 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Josefin Sans', 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 72px;
+}
+
+.sketch-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.config-area-1,
+.config-area-2 {
+    flex: 1;
+}
+
+/* toggle button and text */
+
+.toggle-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Josefin Sans', 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#spacebar-text {
+    color: #e63946;
+}
+
+.toggles {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toggle {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    border: 2px solid #da1324;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.circle {
+    position: absolute;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: #da1324;
+    transition: .3s;
+}
+
+.toggle-text {
+    font-size: 12px;
+    margin-top: -6px;
+    color: #da1324;
+}
+
+.active {
+    border-color: rgb(80, 220, 100);
+}
+
+.active+.toggle-text {
+    color: rgb(80, 220, 100);
+}
+
+.toggle-header:has(+ .active) #spacebar-text {
+    color: rgb(80, 220, 100);
+    transition: all 0.3s;
 }

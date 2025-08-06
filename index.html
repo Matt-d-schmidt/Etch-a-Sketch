@@ -4,22 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Etch-a-Sketch</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;1,200&family=Kaushan+Script&family=Poppins:ital,wght@0,300;1,200&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <h1 class="flex items-center justify-center m-4 p-5 container">Etch-a-Sketch</h1>
-    <script src="script.js"></script>
-    <div class="flex flex-col items-center justify-center">
-        <div class="controls">
-            <button id="color" class="m-2 p-2 bg-cyan-500 text-white rounded">Color</button>
-            <button id="erase" class="m-2 p-2 bg-cyan-500 text-white rounded">Erase</button>
-            <button id="rainbow" class="m-2 p-2 bg-cyan-500 text-white rounded">Rainbow</button>
-            <button id="clear" class="m-2 p-2 bg-cyan-500 text-white rounded">Clear</button>
-            <button id="resize" class="m-2 p-2 bg-cyan-500 text-white rounded">Resize</button>
+    <div class="header">
+        <h1 class="font">Etch-a-Sketch</h1>
+    </div>
+    <div class="toggles">
+        <div class="toggle-header">
+            Press$nbspl<p id="spacebar-text">Spacebar</p>$nbsp; to toggle the pen
         </div>
-        <div class="container"></div>
+        <div class="toggle">
+            <div class="circle"></div>
+        </div>
+        <span class="toggle-text">Off</span>
     </div>
 </body>
 
