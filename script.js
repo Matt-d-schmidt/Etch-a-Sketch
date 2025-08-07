@@ -203,7 +203,7 @@ const penColorInput = document.querySelector('#pen-color');
 const range = document.querySelector('#num-grid');
 const rangeFeedback = document.querySelector('.num-grid-feedback');
 
-range.vale - defaultGridSize;
+range.value = defaultGridSize;
 rangeFeedback.textContent = `Grid Size: ${defaultGridSize} x ${defaultGridSize}`;
 
 var inputSize = range.value;
