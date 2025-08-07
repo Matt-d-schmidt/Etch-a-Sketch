@@ -111,6 +111,10 @@ function eraseUnit() {
 
 /* changes the background color of the grid but keeps the divs with the colored tags */
 
+bgColorInput.addEventListener('input', (e) => {
+    changeBGColor(e.target.value);
+});
+
 function changeBGColor(bgColor) {
     const gridList = grid.children;
     for (let i = 0; i < gridList.length; i++) {
@@ -118,7 +122,7 @@ function changeBGColor(bgColor) {
             gridList[i].style['background-color'] = bgColor;
         }
     }
-};
+}
 
 /* Resets the buttons if they are is active */
 
@@ -229,10 +233,10 @@ range.addEventListener('input', (e) => {
     inputSize = e.target.value;
 });
 
-const rangeApply = document.querySelector('#apply-size');
+const rangeApply = document.querySelector('#grid-apply');
 rangeApply.addEventListener('click', () => {
     resetToggle();
-    resetGrid(inputSize, `${bgColorInput.value}`);
+    resetGrid(inputSize, bgColorInput.value);
 });
 
 reset.addEventListener('click', () => {
