@@ -26,24 +26,24 @@ function resetGrid(n, backgroundColor) {
         gridTile.style.width = `${100 / n}%`;
         gridTile.style.height = `${100 / n}%`;
         gridTile.style.flex = 'auto';
-        gridTile.style['backgroundColor'] = backgroundColor;
+        gridTile.style['background-color'] = backgroundColor;
         gridTile.style['outline'] = '1px solid #F9F9F9';
 
-        grind.appendChild(gridTile);
+        grid.appendChild(gridTile);
     }
 };
 
 /* ends the pen and removes the event listeners */
 function endPen() {
-    const gridlist = grid.children;
-    for (let i = 0; i < gridlist.length; i++) {
-        ridList[i].removeEventListener('mouseover', fillUnit);
+    const gridList = grid.children;
+    for (let i = 0; i < gridList.length; i++) {
+        gridList[i].removeEventListener('mouseover', fillUnit);
         gridList[i].removeEventListener('click', fillUnit);
         gridList[i].removeEventListener('mouseover', eraseUnit);
         gridList[i].removeEventListener('click', eraseUnit);
-        console.log('pen ended');
+        console.log('removed');
     }
-};
+}
 
 /* changes pen color to the selected color */
 
@@ -52,11 +52,11 @@ function changePenColor() {
 
     function getMousePos(e) {
         console.log(document.elementFromPoint(e.clientX, e.clientY));
-        const element = document.elementFromPoint(e.clientX, e.clientY);
+        const initElement = document.elementFromPoint(e.clientX, e.clientY);
 
-        if (element && element.classList.contains('grid-tile')) {
-            element.style['backgroundColor'] = penColorInput.value;
-            element.classList.add('colored');
+        if (initElement && initElement.classList.contains('grid-tile')) {
+            initElement.style['background-color'] = penColorInput.value;
+            initElement.classList.add('colored');
         }
 
         document.addEventListener('mousemove', getMousePos);
@@ -65,13 +65,13 @@ function changePenColor() {
 
     const gridList = grid.children;
     for (let i = 0; i < gridList.length; i++) {
-        gridList[i].addEventListener('click', fillUnit);
         gridList[i].addEventListener('mouseover', fillUnit);
+        gridList[i].addEventListener('click', fillUnit);
     }
 };
 
 function fillUnit() {
-    this.style['backgroundColor'] = penColorInput.value;
+    this.style['background-color'] = penColorInput.value;
     this.classList.add('colored');
 }
 
@@ -79,23 +79,29 @@ function fillUnit() {
 
 function setEraser() {
     endPen();
-    const gridList = grid.children;
+
     function getMousePos(e) {
         console.log(document.elementFromPoint(e.clientX, e.clientY));
-        const element = document.elementFromPoint(e.clientX, e.clientY);
+        const initElement = document.elementFromPoint(e.clientX, e.clientY);
 
-        if (element && element.classList.contains('grid-tile')) {
-            element.style['backgroundColor'] = 'white';
-            element.classList.remove('colored');
+        if (initElement.classList.contains("grid-unit") && initElement.classList.contains("colored")) {
+            initElement.style['background-color'] = bgColorInput.value;
+            initElement.classList.remove('colored');
         }
 
         document.addEventListener('mousemove', getMousePos);
     }
     document.addEventListener('mousemove', getMousePos);
+
+    const gridList = grid.children;
+    for (let i = 0; i < gridList.length; i++) {
+        gridList[i].addEventListener('mouseover', eraseUnit);
+        gridList[i].addEventListener('click', eraseUnit);
+    }
 };
 
 function eraseUnit() {
-    this.style['backgroundColor'] = 'white';
+    this.style['background-color'] = bgColorInput.value;
     this.classList.remove('colored');
 }
 
