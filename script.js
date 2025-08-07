@@ -1,3 +1,6 @@
+const bgColorInput = document.querySelector('#bg-color');
+const penColorInput = document.querySelector('#pen-color');
+
 /* creates the default grid */
 function createGrid(n) {
     for (let i = 0; i < n * n; i++) {
@@ -217,9 +220,6 @@ window.addEventListener('keydown', (e) => {
 
 const defaultBGColor = '#FFFFFF';
 const defaultPenColor = '#000000';
-
-const bgColorInput = document.querySelector('#bg-color');
-const penColorInput = document.querySelector('#pen-color');
 
 const range = document.querySelector('#num-grid');
 const rangeFeedback = document.querySelector('#num-grid-feedback');
