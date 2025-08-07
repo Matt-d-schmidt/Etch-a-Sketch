@@ -239,7 +239,7 @@ reset.addEventListener('click', () => {
     resetToggle();
 
     erase = false;
-    const eraseBtn = document.querySelector('#eraser-btn');
+    const eraseBtn = document.querySelector('.eraser-btn');
     eraseBtn.classList.remove('eraserActive');
 
     bgColorInput.value = defaultBGColor;
