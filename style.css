@@ -12,13 +12,15 @@ button {
 }
 
 .header {
-    padding: 30px 30px 0 20px;
+    padding: 0px 25px 0 25px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Josefin Sans', 'Poppins', sans-serif;
     font-weight: 300;
-    font-size: 68px;
+    font-size: 50px;
+    margin-bottom: -20px;
+    margin-top: -30px;
 }
 
 .main {
@@ -41,8 +43,9 @@ button {
     align-items: center;
     font-family: 'Josefin Sans', 'Poppins', sans-serif;
     font-weight: 400;
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: -30px;
 }
 
 #spacebar-text {
@@ -50,7 +53,7 @@ button {
 }
 
 .toggle-ctrl {
-    padding: 20px;
+    padding: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,8 +63,8 @@ button {
 
 .toggle {
     position: relative;
-    width: 40px;
-    height: 20px;
+    width: 35px;
+    height: 15px;
     border: 2px solid #da1324;
     border-radius: 20px;
     justify-content: center;
@@ -73,8 +76,8 @@ button {
 .circle {
     position: absolute;
     left: 0;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     border-radius: 20px;
     background-color: #da1324;
     transition: .3s;
@@ -133,6 +136,7 @@ button {
 
 label {
     margin-bottom: 10px;
+    margin-top: 5px;
     font-size: 14px;
     font-weight: 600;
 }
@@ -143,13 +147,13 @@ label {
     justify-content: center;
     align-items: center;
     border: 1.5px solid black;
-    border-radius: 20%;
+    border-radius: 50%;
     color: black;
     width: 80px;
     height: 80px;
     padding: 10px 0;
     transition: all 0.3s;
-    margin: 20px 0;
+    margin: 15px 0;
 }
 
 .eraser-btn:hover {
@@ -204,7 +208,38 @@ label {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 50px;
+    padding: 30px;
+}
+
+.grid-size-ctr label {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+#grid-apply {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1.5px solid black;
+    border-radius: 50%;
+    color: black;
+    width: 80px;
+    height: 80px;
+    padding: 10px 0;
+    transition: all 0.3s;
+    margin: 78px 0;
+}
+
+#grid-apply:hover {
+    background-color: black;
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+#grid-apply:focus {
+    outline: none;
 }
 
 .reset-ctr {
@@ -215,22 +250,18 @@ label {
     padding-bottom: 70px;
 }
 
-#grid-apply {
-    transition: all 0.3s;
-    margin-top: 20px;
-}
-
 #reset-grid {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 20%;
+    border-radius: 50%;
     border: 2px solid #da1324;
     background-color: white;
     color: #da1324;
     width: 60px;
     height: 60px;
     transition: all 0.3s;
+    margin-bottom: -20px;
 }
 
 #reset-grid:hover {
@@ -255,8 +286,17 @@ label {
 }
 
 .footer {
+
     background-color: #eeeeee;
     padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer2 {
+    background-color: #eeeeee;
+    padding: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
