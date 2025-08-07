@@ -181,7 +181,7 @@ window.addEventListener('keydown', (e) => {
 
 let erase = false;
 function toggleEraser() {
-    const eraseBtn = document.querySelector('#eraser');
+    const eraseBtn = document.querySelector('.eraser-btn ');
     erase = !erase;
     if (erase) {
         console.log('eraser on');
@@ -231,13 +231,13 @@ rangeApply.addEventListener('click', () => {
     resetGrid(inputSize, `${bgColorInput.value}`);
 });
 
-reset.addEventListener('click', (e) => {
+reset.addEventListener('click', () => {
     resetToggle();
 
     bgColorInput.value = defaultBGColor;
     penColorInput.value = defaultPenColor;
 
-    resetGrid(inputSize, bgColorInput.value);
+    resetGrid(defaultGridSize, defaultBGColor);
     range.value = defaultGridSize;
     rangeFeedback.textContent = `${defaultGridSize} x ${defaultGridSize}`;
 });
