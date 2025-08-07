@@ -238,6 +238,10 @@ rangeApply.addEventListener('click', () => {
 reset.addEventListener('click', () => {
     resetToggle();
 
+    erase = false;
+    const eraseBtn = document.querySelector('#eraser-btn');
+    eraseBtn.classList.remove('eraserActive');
+
     bgColorInput.value = defaultBGColor;
     penColorInput.value = defaultPenColor;
 
