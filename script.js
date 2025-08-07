@@ -84,7 +84,7 @@ function setEraser() {
         console.log(document.elementFromPoint(e.clientX, e.clientY));
         const initElement = document.elementFromPoint(e.clientX, e.clientY);
 
-        if (initElement.classList.contains("grid-unit") && initElement.classList.contains("colored")) {
+        if (initElement.classList.contains("grid-tile") && initElement.classList.contains("colored")) {
             initElement.style['background-color'] = bgColorInput.value;
             initElement.classList.remove('colored');
         }
@@ -170,7 +170,7 @@ function toggle() {
 
 // spacebar toggle 
 
-window.addEventListener('keydown', (e) => {
+window.addEventListener('keydown', function (e) {
     if (e.code === 'Space') {
         e.preventDefault();
         toggle();
@@ -181,7 +181,7 @@ window.addEventListener('keydown', (e) => {
 
 let erase = false;
 function toggleEraser() {
-    const eraseBtn = document.querySelector('.eraser-btn ');
+    const eraseBtn = document.querySelector('.eraser-btn');
     erase = !erase;
     if (erase) {
         console.log('eraser on');
@@ -213,7 +213,7 @@ const bgColorInput = document.querySelector('#bg-color');
 const penColorInput = document.querySelector('#pen-color');
 
 const range = document.querySelector('#num-grid');
-const rangeFeedback = document.querySelector('.num-grid-feedback');
+const rangeFeedback = document.querySelector('#num-grid-feedback');
 
 range.value = defaultGridSize;
 rangeFeedback.textContent = `${defaultGridSize} x ${defaultGridSize}`;
