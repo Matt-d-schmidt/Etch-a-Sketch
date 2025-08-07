@@ -67,12 +67,14 @@ function changePenColor() {
             initElement.classList.add('colored');
         }
     };
-    document.addEventListener('mousemove', penMouseMoveHandler);
 
     const gridList = grid.children;
-    for (let i = 0; i < gridList.length; i++) {
-        gridList[i].addEventListener('mouseover', fillUnit);
-        gridList[i].addEventListener('click', fillUnit);
+    if (active) {
+        document.addEventListener('mousemove', penMouseMoveHandler);
+        for (let i = 0; i < gridList.length; i++) {
+            gridList[i].addEventListener('mouseover', fillUnit);
+            gridList[i].addEventListener('click', fillUnit);
+        }
     }
 }
 
