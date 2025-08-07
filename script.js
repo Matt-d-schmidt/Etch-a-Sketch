@@ -1,6 +1,3 @@
-const bgColorInput = document.querySelector('#bg-color');
-const penColorInput = document.querySelector('#pen-color');
-
 /* creates the default grid */
 function createGrid(n) {
     for (let i = 0; i < n * n; i++) {
@@ -86,12 +83,7 @@ function fillUnit() {
     this.classList.add('colored');
 }
 
-/* eraser function: chnages pen to the same color as the background and removes colored tags */
-
-document.addEventListener('DOMContentLoaded', () => {
-    const eraseBtn = document.getElementById('eraser-btn');
-    eraseBtn.addEventListener('click', toggleEraser);
-});
+/* eraser function: changes pen to the same color as the background and removes colored tags */
 
 function setEraser() {
     endPen();
@@ -221,6 +213,9 @@ window.addEventListener('keydown', (e) => {
 const defaultBGColor = '#FFFFFF';
 const defaultPenColor = '#000000';
 
+const bgColorInput = document.querySelector('#bg-color');
+const penColorInput = document.querySelector('#pen-color');
+
 const range = document.querySelector('#num-grid');
 const rangeFeedback = document.querySelector('#num-grid-feedback');
 
@@ -259,4 +254,9 @@ penColorInput.addEventListener('input', (e) => {
 
 bgColorInput.addEventListener('input', (e) => {
     changeBGColor(e.target.value);
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const eraseBtn = document.getElementById('eraser-btn');
+    eraseBtn.addEventListener('click', toggleEraser);
 });
