@@ -1,14 +1,16 @@
 /* creates the default grid */
 function createGrid(n) {
-    for (let i = 0; i < n; i++) {
+    for (let i = 0; i < n * n; i++) {
         const gridTile = document.createElement('div');
         gridTile.classList.add('grid-tile');
 
         gridTile.style.width = `${100 / n}%`;
         gridTile.style.height = `${100 / n}%`;
+        gridTile.style.flex = 'auto';
         gridTile.style['backgroundColor'] = 'white';
         gridTile.style['outline'] = '1px solid #F9F9F9';
-        document.querySelector('.area-2').appendChild(gridTile);
+
+        grid.appendChild(gridTile);
     }
 };
 
@@ -17,15 +19,17 @@ function resetGrid(n, backgroundColor) {
     while (grid.firstChild) {
         grid.removeChild(grid.firstChild);
     }
-    for (let i = 0; i < n; i++) {
+    for (let i = 0; i < n * n; i++) {
         const gridTile = document.createElement('div');
         gridTile.classList.add('grid-tile');
 
         gridTile.style.width = `${100 / n}%`;
         gridTile.style.height = `${100 / n}%`;
+        gridTile.style.flex = 'auto';
         gridTile.style['backgroundColor'] = backgroundColor;
         gridTile.style['outline'] = '1px solid #F9F9F9';
-        document.querySelector('.area-2').appendChild(gridTile);
+
+        grind.appendChild(gridTile);
     }
 };
 

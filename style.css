@@ -49,7 +49,7 @@ button {
     color: #e63946;
 }
 
-.toggles {
+.toggle-ctrl {
     padding: 20px;
     display: flex;
     justify-content: center;
@@ -92,6 +92,13 @@ button {
 
 .active+.toggle-text {
     color: rgb(80, 220, 100);
+}
+
+.active .circle {
+    left: 100%;
+    transform: translateX(-100%);
+    transition: .3s;
+    background-color: rgb(80, 220, 100);
 }
 
 .toggle-header:has(+ .active) #spacebar-text {
