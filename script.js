@@ -133,6 +133,8 @@ const reset = document.querySelector('#reset-grid');
 
 createGrid(defaultGridSize);
 
+let active = false;
+
 function toggle() {
     let toggle = document.querySelector('.toggle');
     let text = document.querySelector('.toggle-text');
@@ -204,29 +206,30 @@ const range = document.querySelector('#num-grid');
 const rangeFeedback = document.querySelector('.num-grid-feedback');
 
 range.value = defaultGridSize;
-rangeFeedback.textContent = `Grid Size: ${defaultGridSize} x ${defaultGridSize}`;
+rangeFeedback.textContent = `${defaultGridSize} x ${defaultGridSize}`;
 
 var inputSize = range.value;
 
 range.addEventListener('input', (e) => {
-    rangeFeedback.textContent = `Grid Size: ${e.target.value} x ${e.target.value}`;
+    rangeFeedback.textContent = `${e.target.value} x ${e.target.value}`;
     inputSize = e.target.value;
 });
 
 const rangeApply = document.querySelector('#apply-size');
-rangeApply.addEventListener('click', (e) => {
+rangeApply.addEventListener('click', () => {
     resetToggle();
-    resetGrid(inputSize, bgColorInput.value);
+    resetGrid(inputSize, `${bgColorInput.value}`);
 });
 
 reset.addEventListener('click', (e) => {
     resetToggle();
-    resetGrid(inputSize, bgColorInput.value);
+
     bgColorInput.value = defaultBGColor;
     penColorInput.value = defaultPenColor;
+
+    resetGrid(inputSize, bgColorInput.value);
     range.value = defaultGridSize;
-    rangeFeedback.textContent = `Grid Size: ${defaultGridSize} x ${defaultGridSize}`;
-    inputSize = defaultGridSize;
+    rangeFeedback.textContent = `${defaultGridSize} x ${defaultGridSize}`;
 });
 
 penColorInput.addEventListener('input', (e) => {
