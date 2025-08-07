@@ -34,14 +34,14 @@
             <div class="color-ctrl">
                 <div class="pen-color-ctrl">
                     <label for="pen-color">Pen:</label>
-                    <input type="color" id="pen-color" value="#000000" name="pen-color">
+                    <input type="color" id="pen-color" value="#000000" name="pen-color" onclick="changePenColor()">
                 </div>
                 <div class="bg-color-ctrl">
                     <label for="bg-color">Background:</label>
-                    <input type="color" id="bg-color" value="#ffffff" name="bg-color">
+                    <input type="color" id="bg-color" value="#ffffff" name="bg-color" onclick="changeBGColor()">
                 </div>
             </div>
-            <button id="eraser-btn" class="eraser-btn" onclick="eraserToggle()">Eraser</button>
+            <button id="eraser-btn" class="eraser-btn" onclick="toggleEraser()">Eraser</button>
         </div>
         <div class="grid-area">
             <div class="grid">
@@ -57,7 +57,7 @@
                 <div id="num-grid-feedback">
 
                 </div>
-                <button id="grid-apply">
+                <button id="grid-apply" onclick="resetGrid()">
                     Apply
                 </button>
             </div>
