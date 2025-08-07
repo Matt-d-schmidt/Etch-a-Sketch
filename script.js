@@ -85,6 +85,11 @@ function fillUnit() {
 
 /* eraser function: chnages pen to the same color as the background and removes colored tags */
 
+document.addEventListener('DOMContentLoaded', () => {
+    const eraseBtn = document.getElementById('eraser-btn');
+    eraseBtn.addEventListener('click', toggleEraser);
+});
+
 function setEraser() {
     endPen();
 
